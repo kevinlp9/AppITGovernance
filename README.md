@@ -1,16 +1,98 @@
-# React + Vite
+# 🏛️ Portal Gobierno de TI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema de gestión y visualización de documentos para el Gobierno de Tecnologías de la Información.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7.2.4-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Descripción
 
-## React Compiler
+Portal web profesional para la gestión y visualización de documentos PDF del Gobierno de TI. Incluye un sistema de navegación lateral, página de inicio atractiva y un visor de PDFs integrado.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ✨ Características
 
-## Expanding the ESLint configuration
+- 🏠 **Página de Inicio**: Hero section con diseño moderno y tarjetas de documentos.
+- 📁 **Menú Lateral**: Navegación intuitiva con iconos y capacidad de colapsar.
+- 📄 **Visor de PDF**: Visualización de documentos con controles de navegación.
+- 🎨 **Diseño Profesional**: Interfaz moderna con gradientes y animaciones.
+- 📱 **Responsive**: Adaptable a dispositivos móviles y tablets.
+- ⚡ **Rápido**: Construido con Vite para un desarrollo ágil.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Requisitos Previos
+
+Antes de comenzar, asegúrate de tener instalado:
+
+- **Node.js** (versión 18.0 o superior)
+- **npm** (incluido con Node.js)
+
+Para verificar tu instalación ejecuta:
+```bash
+node --version
+npm --version
+```
+
+## 📦 Instalación
+1. Clonar el repositorio
+```bash
+git clone <url-del-repositorio>
+cd untitled
+```
+
+2. Instalar dependencias
+```bash
+git clone <url-del-repositorio>
+cd untitled
+```
+
+3. Agregar archivos PDF Coloca tus documentos PDF en la carpeta public/pdfs/:
+```bash
+public/
+ └── pdfs/
+      ├── documento1.pdf
+      ├── documento2.pdf
+      ├── documento3.pdf
+      └── documento4.pdf
+```
+
+4. Actualiza el array pdfDocuments en src/App.jsx si cambias los nombres:
+```bash
+const pdfDocuments = [
+  {
+    id: 1,
+    name: 'Tu Documento',
+    path: '/pdfs/tu-archivo.pdf',
+    icon: '🔒',
+    description: 'Descripción de tu documento'
+  }
+];
+```
+
+## 🎯 Uso
+Modo Desarrollo
+
+Para iniciar el servidor local:
+```bash
+npm run dev
+```
+
+## 🤝 Contribuciones
+1. Haz Fork del proyecto.
+2. Crea una rama (git checkout -b feature/NuevaCaracteristica).
+3. Haz Commit (git commit -m 'Agrega nueva característica').
+4. Haz Push (git push origin feature/NuevaCaracteristica).
+5. Abre un Pull Request.
+
+## 👤 Autores
+Abundes Cortés Alejandro
+
+Atilano Gutiérrez Kevin
+
+García Jimpenez Osmar Alejandro
+
+Hecho con ❤️ para el Gobierno de TI
+
+
+
