@@ -43,8 +43,7 @@ cd untitled
 
 2. Instalar dependencias
 ```bash
-git clone <url-del-repositorio>
-cd untitled
+npm install
 ```
 
 3. Agregar archivos PDF Coloca tus documentos PDF en la carpeta public/pdfs/:
