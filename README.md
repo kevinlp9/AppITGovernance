@@ -85,11 +85,11 @@ npm run dev
 5. Abre un Pull Request.
 
 ## 👤 Autores
-Abundes Cortés Alejandro
+- Abundes Cortés Alejandro
 
-Atilano Gutiérrez Kevin
+- Atilano Gutiérrez Kevin
 
-García Jimpenez Osmar Alejandro
+- García Jimpenez Osmar Alejandro
 
 Hecho con ❤️ para el Gobierno de TI
 
