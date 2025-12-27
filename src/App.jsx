@@ -14,34 +14,83 @@ function App() {
 
   // Lista de documentos PDF
   const pdfDocuments = [
-    { 
-      id: 1, 
-      name: 'Políticas de Seguridad', 
-      path: '/pdfs/documento1.pdf',
-      icon: '🔒',
-      description: 'Normativas y políticas de seguridad informática'
+    {
+      id: 1,
+      name: 'Marco Organizacional del Servicio de IT',
+      path: '/pdfs/1.pdf',
+      icon: '📘',
+      description: 'Documento que integra la introducción, objetivo del servicio de IT, descripción del servicio, misión, visión y valores de la empresa.'
     },
-    { 
-      id: 2, 
-      name: 'Manual de Procedimientos', 
-      path: '/pdfs/documento2.pdf',
-      icon: '📋',
-      description: 'Guía de procedimientos técnicos'
-    },
-    { 
-      id: 3, 
-      name: 'Plan Estratégico', 
-      path: '/pdfs/documento3.pdf',
+    {
+      id: 2,
+      name: 'Metas Corporativas (COBIT)',
+      path: '/pdfs/2.pdf',
       icon: '🎯',
-      description: 'Planificación estratégica de TI'
+      description: 'Metas corporativas definidas con el marco COBIT, alineadas a las cuatro dimensiones del Balanced Scorecard.'
     },
-    { 
-      id: 4, 
-      name: 'Normas y Estándares', 
-      path: '/pdfs/documento4.pdf',
-      icon: '⚖️',
-      description: 'Normativas y estándares tecnológicos'
+    {
+      id: 3,
+      name: 'Metas de IT (COBIT)',
+      path: '/pdfs/3.pdf',
+      icon: '💻',
+      description: 'Metas del área de Tecnologías de la Información elaboradas con COBIT, una por cada dimensión del Balanced Scorecard.'
     },
+    {
+      id: 4,
+      name: 'Cascada de Metas Corporativas',
+      path: '/pdfs/4.pdf',
+      icon: '🔗',
+      description: 'Mapeo de relaciones primarias y secundarias entre las metas corporativas según la cascada de metas de COBIT.'
+    },
+    {
+      id: 5,
+      name: 'Cascada de Metas de IT',
+      path: '/pdfs/5.pdf',
+      icon: '🧩',
+      description: 'Relación y alineación de las metas de IT con las metas corporativas mediante la cascada de metas de COBIT.'
+    },
+    {
+      id: 6,
+      name: 'Mapa Estratégico Corporativo',
+      path: '/pdfs/6.pdf',
+      icon: '🗺️',
+      description: 'Mapa estratégico elaborado con COBIT y Balanced Scorecard, enfocado en una meta corporativa.'
+    },
+    {
+      id: 7,
+      name: 'Mapa Estratégico de IT',
+      path: '/pdfs/7.pdf',
+      icon: '📊',
+      description: 'Mapa estratégico del área de IT basado en COBIT y Balanced Scorecard, alineado a una meta de IT.'
+    },
+    {
+      id: 8,
+      name: 'Caso de Negocio',
+      path: '/pdfs/8.pdf',
+      icon: '📈',
+      description: 'Caso de negocio desarrollado en formato formal, justificando la inversión y el valor del servicio de IT.'
+    },
+    {
+      id: 9,
+      name: 'Cédula de Servicio de IT',
+      path: '/pdfs/9.pdf',
+      icon: '📝',
+      description: 'Cédula de servicio completa elaborada con ITIL, que describe el servicio, alcance, responsables y niveles de servicio.'
+    },
+    {
+      id: 10,
+      name: 'Inventario de Activos',
+      path: '/pdfs/10.pdf',
+      icon: '📦',
+      description: 'Inventario de activos de TI que integra los activos de los tres procesos definidos.'
+    },
+    {
+      id: 11,
+      name: 'Matriz de Riesgos de Seguridad de la Información',
+      path: '/pdfs/11.pdf',
+      icon: '⚠️',
+      description: 'Matriz de riesgos elaborada con ISO 27000, incluyendo matriz de confidencialidad, integridad, disponibilidad (CID) y de infraestructuras críticas.'
+    }
   ];
 
   function onDocumentLoadSuccess({ numPages }) {
@@ -115,7 +164,7 @@ function App() {
         </nav>
 
         <div className="sidebar-footer">
-          <p>© 2024 Gobierno de TI</p>
+          <p>© 2025 KAO</p>
         </div>
       </aside>
 
@@ -146,7 +195,7 @@ function App() {
               <div className="welcome-text">
                 <h2>Bienvenido al Portal de Documentación</h2>
                 <p>
-                  Accede a todos los documentos oficiales del Gobierno de TI. 
+                  Accede a todos los documentos oficiales de Gobierno de TI.
                   Aquí encontrarás políticas, procedimientos, normas y estándares 
                   que rigen la gestión tecnológica de nuestra organización.
                 </p>
@@ -173,17 +222,17 @@ function App() {
                 <div className="info-card">
                   <span className="info-icon">📚</span>
                   <h3>Biblioteca Digital</h3>
-                  <p>Acceso completo a la documentación oficial</p>
+                  <p>Acceso completo a la documentación</p>
                 </div>
                 <div className="info-card">
                   <span className="info-icon">🔄</span>
                   <h3>Actualizado</h3>
-                  <p>Documentos actualizados periódicamente</p>
+                  <p>Documentos actualizados</p>
                 </div>
                 <div className="info-card">
                   <span className="info-icon">🛡️</span>
                   <h3>Seguro</h3>
-                  <p>Cumplimiento de normas de seguridad</p>
+                  <p>Cumplimiento de normas</p>
                 </div>
               </div>
             </div>
