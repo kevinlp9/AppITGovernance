@@ -172,7 +172,7 @@ function App() {
           <div className="sidebar-header">
             <div className="logo">
               <span className="logo-icon">🏛️</span>
-              <h2>Gobierno de TI</h2>
+              <h2>ESCOQUALITY</h2>
             </div>
             <button
               className="toggle-sidebar"
@@ -222,10 +222,10 @@ function App() {
               <div className="hero-content">
                 <h1 className="hero-title">
                   <span className="hero-icon">🏛️</span>
-                  Gobierno de TI
+                  ESCOQUALITY
                 </h1>
                 <p className="hero-subtitle">
-                  Sistema de Gestión y Gobierno de Tecnologías de la Información
+                  Consultora de QA
                 </p>
                 <div className="hero-badges">
                   <span className="badge">🔐 Seguro</span>
@@ -239,7 +239,7 @@ function App() {
               <div className="welcome-text">
                 <h2>Bienvenido al Portal de Documentación</h2>
                 <p>
-                  Accede a todos los documentos oficiales de Gobierno de TI.
+                  Accede a todos los documentos oficiales de ESCOQUALITY.
                   Aquí encontrarás políticas, procedimientos, normas y estándares 
                   que rigen la gestión tecnológica de nuestra organización.
                 </p>
