@@ -606,3 +606,75 @@ body {
         width: 100%;
     }
 }
+
+.app.focus-mode {
+  /* Elimina padding y expande el área */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+}
+
+.main-content.focus-mode {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.pdf-view.focus-mode {
+  max-width: 100vw;
+  width: 100vw;
+  min-height: 100vh;
+  background: transparent;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pdf-header {
+  /* ...existing code... */
+}
+
+.pdf-header .back-button {
+  /* ...existing code... */
+}
+
+.pdf-container {
+  /* ...existing code... */
+}
+
+.pdf-view.focus-mode .pdf-header {
+  background: transparent;
+  box-shadow: none;
+  padding: 1.5rem 1rem 0 1rem;
+}
+
+.pdf-view.focus-mode .pdf-container {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: 0 auto;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.pdf-view.focus-mode .pdf-controls {
+  background: transparent;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .main-content.focus-mode,
+  .pdf-view.focus-mode {
+    width: 100vw;
+    min-width: 0;
+    padding: 0;
+  }
+}

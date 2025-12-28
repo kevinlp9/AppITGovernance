@@ -12,6 +12,7 @@ function App() {
   const [pageNumber, setPageNumber] = useState(1);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [pdfScale, setPdfScale] = useState(1.0);
+  const [focusMode, setFocusMode] = useState(false);
 
   // Lista de documentos PDF
   const pdfDocuments = [
@@ -159,56 +160,62 @@ function App() {
     }
   }
 
+  // Al activar focusMode, ocultar sidebar y expandir PDF
+  const handleEnterFocusMode = () => setFocusMode(true);
+  const handleExitFocusMode = () => setFocusMode(false);
+
   return (
-    <div className="app">
+    <div className={`app${focusMode ? ' focus-mode' : ''}`}>
       {/* Sidebar */}
-      <aside className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
-        <div className="sidebar-header">
-          <div className="logo">
-            <span className="logo-icon">🏛️</span>
-            <h2>Gobierno de TI</h2>
+      {!focusMode && (
+        <aside className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
+          <div className="sidebar-header">
+            <div className="logo">
+              <span className="logo-icon">🏛️</span>
+              <h2>Gobierno de TI</h2>
+            </div>
+            <button
+              className="toggle-sidebar"
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+            >
+              {sidebarOpen ? '◀' : '▶'}
+            </button>
           </div>
-          <button 
-            className="toggle-sidebar"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-          >
-            {sidebarOpen ? '◀' : '▶'}
-          </button>
-        </div>
 
-        <nav className="sidebar-nav">
-          <button 
-            className={`nav-item ${currentView === 'home' ? 'active' : ''}`}
-            onClick={goToHome}
-          >
-            <span className="nav-icon">🏠</span>
-            <span className="nav-text">Inicio</span>
-          </button>
+          <nav className="sidebar-nav">
+            <button
+              className={`nav-item ${currentView === 'home' ? 'active' : ''}`}
+              onClick={goToHome}
+            >
+              <span className="nav-icon">🏠</span>
+              <span className="nav-text">Inicio</span>
+            </button>
 
-          <div className="nav-section">
-            <p className="nav-section-title">Documentos</p>
-            {pdfDocuments.map(pdf => (
-              <button
-                key={pdf.id}
-                className={`nav-item ${selectedPdf?.id === pdf.id ? 'active' : ''}`}
-                onClick={() => handlePdfClick(pdf)}
-              >
-                <span className="nav-icon">{pdf.icon}</span>
-                <span className="nav-text">{pdf.name}</span>
-              </button>
-            ))}
+            <div className="nav-section">
+              <p className="nav-section-title">Documentos</p>
+              {pdfDocuments.map(pdf => (
+                <button
+                  key={pdf.id}
+                  className={`nav-item ${selectedPdf?.id === pdf.id ? 'active' : ''}`}
+                  onClick={() => handlePdfClick(pdf)}
+                >
+                  <span className="nav-icon">{pdf.icon}</span>
+                  <span className="nav-text">{pdf.name}</span>
+                </button>
+              ))}
+            </div>
+          </nav>
+
+          <div className="sidebar-footer">
+            <p>© 2025 KAO</p>
           </div>
-        </nav>
-
-        <div className="sidebar-footer">
-          <p>© 2025 KAO</p>
-        </div>
-      </aside>
+        </aside>
+      )}
 
       {/* Main Content */}
-      <main className="main-content">
+      <main className={`main-content${focusMode ? ' focus-mode' : ''}`}>
         {/* Home View */}
-        {currentView === 'home' && (
+        {currentView === 'home' && !focusMode && (
           <div className="home-view">
             <div className="hero-section">
               <div className="hero-overlay"></div>
@@ -278,7 +285,7 @@ function App() {
 
         {/* PDF View */}
         {currentView === 'pdf' && selectedPdf && (
-          <div className="pdf-view">
+          <div className={`pdf-view${focusMode ? ' focus-mode' : ''}`}>
             <div className="pdf-header">
               <div className="pdf-title">
                 <span className="pdf-icon">{selectedPdf.icon}</span>
@@ -288,9 +295,11 @@ function App() {
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <button className="back-button" onClick={goToHome}>
-                  ← Volver al inicio
-                </button>
+                {!focusMode && (
+                  <button className="back-button" onClick={goToHome}>
+                    ← Volver al inicio
+                  </button>
+                )}
                 <a
                   href={selectedPdf.path}
                   download
@@ -300,9 +309,17 @@ function App() {
                 >
                   Descargar PDF
                 </a>
+                {!focusMode ? (
+                  <button className="back-button" onClick={handleEnterFocusMode} title="Modo concentración">
+                    🧘 Modo concentración
+                  </button>
+                ) : (
+                  <button className="back-button" onClick={handleExitFocusMode} title="Salir de modo concentración">
+                    Salir de concentración
+                  </button>
+                )}
               </div>
             </div>
-
             <div className="pdf-container" onWheel={handlePdfWheel}>
               <Document
                 file={selectedPdf.path}
