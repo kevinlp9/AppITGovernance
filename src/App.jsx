@@ -91,6 +91,27 @@ function App() {
       path: '/pdfs/11.pdf',
       icon: '⚠️',
       description: 'Matriz de riesgos elaborada con ISO 27000, incluyendo matriz de confidencialidad, integridad, disponibilidad (CID) y de infraestructuras críticas.'
+    },
+    {
+      id: 12,
+      name: 'BIA Táctico',
+      path: '/pdfs/12.pdf',
+      icon: '📑',
+      description: 'Análisis de Impacto al Negocio (BIA) a nivel táctico, integrando los tres BIA correspondientes a los procesos definidos del servicio de IT.'
+    },
+    {
+      id: 13,
+      name: 'BIA Operacional',
+      path: '/pdfs/13.pdf',
+      icon: '⚙️',
+      description: 'Análisis de Impacto al Negocio (BIA) a nivel operacional, que integra un BIA enfocado en la operación directa del servicio.'
+    },
+    {
+      id: 14,
+      name: 'Plan de Continuidad del Servicio',
+      path: '/pdfs/14.pdf',
+      icon: '🛡️',
+      description: 'Plan de Continuidad del Servicio de IT, elaborado con base en los resultados de los BIA táctico y operacional para garantizar la recuperación y continuidad del servicio.'
     }
   ];
 
@@ -266,9 +287,20 @@ function App() {
                   <p>{selectedPdf.description}</p>
                 </div>
               </div>
-              <button className="back-button" onClick={goToHome}>
-                ← Volver al inicio
-              </button>
+              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                <button className="back-button" onClick={goToHome}>
+                  ← Volver al inicio
+                </button>
+                <a
+                  href={selectedPdf.path}
+                  download
+                  className="back-button"
+                  style={{ textDecoration: 'none', display: 'inline-block' }}
+                  title="Descargar PDF"
+                >
+                  Descargar PDF
+                </a>
+              </div>
             </div>
 
             <div className="pdf-container" onWheel={handlePdfWheel}>
