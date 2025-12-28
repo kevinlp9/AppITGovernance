@@ -14,7 +14,9 @@ Portal web profesional para la gestión y visualización de documentos PDF del G
 
 - 🏠 **Página de Inicio**: Hero section con diseño moderno y tarjetas de documentos.
 - 📁 **Menú Lateral**: Navegación intuitiva con iconos y capacidad de colapsar.
-- 📄 **Visor de PDF**: Visualización de documentos con controles de navegación.
+- 📄 **Visor de PDF**: Visualización de documentos con controles de navegación, zoom (botones y rueda del mouse), y botón de descarga.
+- ➕ **Zoom**: Haz zoom en los PDFs con botones o usando Ctrl/Cmd + rueda del mouse.
+- ⬇️ **Descarga**: Descarga el PDF visualizado con un solo clic.
 - 🎨 **Diseño Profesional**: Interfaz moderna con gradientes y animaciones.
 - 📱 **Responsive**: Adaptable a dispositivos móviles y tablets.
 - ⚡ **Rápido**: Construido con Vite para un desarrollo ágil.
@@ -38,7 +40,7 @@ npm --version
 1. Clonar el repositorio
 ```bash
 git clone <url-del-repositorio>
-cd untitled
+cd AppITGovernance
 ```
 
 2. Instalar dependencias
@@ -46,7 +48,8 @@ cd untitled
 npm install
 ```
 
-3. Agregar archivos PDF Coloca tus documentos PDF en la carpeta public/pdfs/:
+3. Agregar archivos PDF
+Coloca tus documentos PDF en la carpeta public/pdfs/:
 ```bash
 public/
  └── pdfs/
@@ -57,7 +60,7 @@ public/
 ```
 
 4. Actualiza el array pdfDocuments en src/App.jsx si cambias los nombres:
-```bash
+```js
 const pdfDocuments = [
   {
     id: 1,
@@ -77,6 +80,13 @@ Para iniciar el servidor local:
 npm run dev
 ```
 
+Abre localhost en tu navegador para ver la app.
+
+## 🖥️ Funcionalidades del Visor PDF
+- Cambia de página con los botones "Anterior" y "Siguiente".
+- Haz zoom con los botones (+, −, 100%) o usando Ctrl/Cmd + rueda del mouse.
+- Descarga el PDF visualizado con el botón "Descargar PDF".
+
 ## 🤝 Contribuciones
 1. Haz Fork del proyecto.
 2. Crea una rama (git checkout -b feature/NuevaCaracteristica).
@@ -86,12 +96,7 @@ npm run dev
 
 ## 👤 Autores
 - Abundes Cortés Alejandro
-
 - Atilano Gutiérrez Kevin
-
 - García Jimpenez Osmar Alejandro
 
 Hecho con ❤️ para Gobierno de TI
-
-
-
