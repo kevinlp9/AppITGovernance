@@ -171,7 +171,6 @@ function App() {
         <aside className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
           <div className="sidebar-header">
             <div className="logo">
-              <span className="logo-icon">🏛️</span>
               <h2>ESCOQUALITY</h2>
             </div>
             <button
@@ -221,7 +220,6 @@ function App() {
               <div className="hero-overlay"></div>
               <div className="hero-content">
                 <h1 className="hero-title">
-                  <span className="hero-icon">🏛️</span>
                   ESCOQUALITY
                 </h1>
                 <p className="hero-subtitle">
