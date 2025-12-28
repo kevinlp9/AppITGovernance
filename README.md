@@ -91,7 +91,7 @@ npm run dev
 
 - García Jimpenez Osmar Alejandro
 
-Hecho con ❤️ para el Gobierno de TI
+Hecho con ❤️ para Gobierno de TI
 
 
 
