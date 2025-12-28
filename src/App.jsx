@@ -11,6 +11,7 @@ function App() {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [pdfScale, setPdfScale] = useState(1.0);
 
   // Lista de documentos PDF
   const pdfDocuments = [
@@ -120,6 +121,21 @@ function App() {
 
   function nextPage() {
     changePage(1);
+  }
+
+  // PDF zoom handlers
+  const zoomIn = () => setPdfScale((s) => Math.min(s + 0.1, 2));
+  const zoomOut = () => setPdfScale((s) => Math.max(s - 0.1, 0.5));
+  const resetZoom = () => setPdfScale(1.0);
+
+  // Permitir zoom con la rueda del mouse (Ctrl+rueda o solo rueda)
+  function handlePdfWheel(event) {
+    // Si el usuario mantiene presionada Ctrl o Cmd, o solo usa la rueda
+    if (event.ctrlKey || event.metaKey) {
+      event.preventDefault();
+      if (event.deltaY < 0) zoomIn();
+      else if (event.deltaY > 0) zoomOut();
+    }
   }
 
   return (
@@ -255,7 +271,7 @@ function App() {
               </button>
             </div>
 
-            <div className="pdf-container">
+            <div className="pdf-container" onWheel={handlePdfWheel}>
               <Document
                 file={selectedPdf.path}
                 onLoadSuccess={onDocumentLoadSuccess}
@@ -276,13 +292,17 @@ function App() {
                   pageNumber={pageNumber}
                   renderTextLayer={false}
                   renderAnnotationLayer={false}
-                  width={Math.min(900, window.innerWidth - 350)}
+                  width={Math.min(900, window.innerWidth - 350) * pdfScale}
+                  scale={pdfScale}
                 />
               </Document>
             </div>
 
             {numPages && (
               <div className="pdf-controls">
+                <button onClick={zoomOut} className="control-button" title="Alejar">−</button>
+                <button onClick={resetZoom} className="control-button" title="Restablecer zoom">100%</button>
+                <button onClick={zoomIn} className="control-button" title="Acercar">+</button>
                 <button
                   disabled={pageNumber <= 1}
                   onClick={previousPage}
