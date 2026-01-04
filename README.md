@@ -99,6 +99,6 @@ Abre [http://localhost:5173] en tu navegador para ver la app.
 ## 👤 Autores
 - Abundes Cortés Alejandro
 - Atilano Gutiérrez Kevin
-- García Jimpenez Osmar Alejandro
+- García Jimenez Osmar Alejandro
 
 Hecho con ❤️ para Gobierno de TI
