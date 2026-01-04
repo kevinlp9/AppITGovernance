@@ -309,7 +309,7 @@ function App() {
                 </a>
                 {!focusMode ? (
                   <button className="back-button" onClick={handleEnterFocusMode} title="Modo concentración">
-                    🧘 Modo concentración
+                    Modo concentración
                   </button>
                 ) : (
                   <button className="back-button" onClick={handleExitFocusMode} title="Salir de modo concentración">
